@@ -7,13 +7,13 @@ class Smartphone:
         self.battery_life = battery_life
     
     def make_call(self, number):
-        print(f"Calling {number} from {self.model}...")
+        print(f"Calling {number} from {self.model}.")
     
     def browse_web(self):
         print(f"Browsing web on the {self.model}.")
     
     def __str__(self):
-        return f"{self.brand} {self.model} - Price: ${self.price}, Battery Life: {self.battery_life} hours"
+        return f"{self.brand} {self.model} - Price: ${self.price}, Battery Life: {self.battery_life} hours."
 
 # Inheritance example: adding a GamingPhone subclass
 class GamingPhone(Smartphone):
@@ -25,11 +25,11 @@ class GamingPhone(Smartphone):
         print(f"Playing {game_name} on {self.model} with {self.cooling_system} cooling.")
 
 # Instantiate and demonstrate the classes
-phone = Smartphone("Apple", "iPhone 14", 999, 20)
-gaming_phone = GamingPhone("Asus", "ROG Phone 6", 1099, 18, "Advanced")
+phone = Smartphone("Apple", "iPhone 14 Pro", 580, 20)
+gaming_phone = GamingPhone("Asus", "ROG Phone 6", 1225, 18, "Advanced")
 
 print(phone)
-phone.make_call("123-456-7890")
+phone.make_call("PLP 123456789")
 phone.browse_web()
 
 print(gaming_phone)
