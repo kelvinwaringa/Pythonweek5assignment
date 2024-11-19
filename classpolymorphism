@@ -1,0 +1,65 @@
+# Define a Smartphone class
+class Smartphone:
+    def __init__(self, brand, model, price, battery_life):
+        self.brand = brand
+        self.model = model
+        self.price = price
+        self.battery_life = battery_life
+    
+    def make_call(self, number):
+        print(f"Calling {number} from {self.model}...")
+    
+    def browse_web(self):
+        print(f"Browsing web on the {self.model}.")
+    
+    def __str__(self):
+        return f"{self.brand} {self.model} - Price: ${self.price}, Battery Life: {self.battery_life} hours"
+
+# Inheritance example: adding a GamingPhone subclass
+class GamingPhone(Smartphone):
+    def __init__(self, brand, model, price, battery_life, cooling_system):
+        super().__init__(brand, model, price, battery_life)
+        self.cooling_system = cooling_system
+    
+    def play_game(self, game_name):
+        print(f"Playing {game_name} on {self.model} with {self.cooling_system} cooling.")
+
+# Instantiate and demonstrate the classes
+phone = Smartphone("Apple", "iPhone 14", 999, 20)
+gaming_phone = GamingPhone("Asus", "ROG Phone 6", 1099, 18, "Advanced")
+
+print(phone)
+phone.make_call("123-456-7890")
+phone.browse_web()
+
+print(gaming_phone)
+gaming_phone.play_game("Genshin Impact")
+
+
+
+# Parent class with polymorphic method
+class Entity:
+    def move(self):
+        pass
+
+# Car class
+class Car(Entity):
+    def move(self):
+        print("Driving 🚗")
+
+# Plane class
+class Plane(Entity):
+    def move(self):
+        print("Flying ✈️")
+
+# Dog class
+class Dog(Entity):
+    def move(self):
+        print("Running 🐕")
+
+# Instantiate the objects
+entities = [Car(), Plane(), Dog()]
+
+# Call the move() method for each object
+for entity in entities:
+    entity.move()
